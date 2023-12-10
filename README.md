@@ -122,6 +122,7 @@ and configured.
 
 ```yaml
 auditd_apply_audit_rules: true
+auditd_write_logs: false
 auditd_action_mail_acct: root
 auditd_admin_space_left_action: suspend
 auditd_disk_error_action: suspend
@@ -141,6 +142,9 @@ Enable `auditd` at boot using Grub.
 
 When `auditd_apply_audit_rules: 'yes'`, the role applies the auditd rules
 from the included template file.
+
+`auditd_write_logs` determines if logs should be written to disk.
+If `false` logs will only appear in systemd-journal.
 
 `auditd_action_mail_acct` should be a valid email address or alias.
 

@@ -43,6 +43,18 @@
     - auditd
     - CCE-80678-6
 
+- name: Configure auditd write_logs
+  become: true
+  ansible.builtin.lineinfile:
+    regexp: ^write_logs =
+    line: write_logs = {{ auditd_write_logs is defined and auditd_write_logs | bool | ternary('yes', 'no') }}
+    dest: /etc/audit/auditd.conf
+    mode: "0640"
+    state: present
+    create: false
+  tags:
+    - auditd
+
 - name: Configure auditd admin_space_left_action
   become: true
   ansible.builtin.lineinfile:
