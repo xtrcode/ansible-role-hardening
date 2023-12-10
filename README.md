@@ -735,6 +735,7 @@ and is based on the work by [@GTFOBins](https://github.com/GTFOBins).
 ### ./defaults/main/sysctl.yml
 
 ```yaml
+sysctl_enabled: true
 sysctl_dev_tty_ldisc_autoload: 0
 sysctl_net_ipv6_conf_accept_ra_rtr_pref: 0
 

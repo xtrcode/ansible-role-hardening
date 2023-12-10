@@ -22,6 +22,7 @@
 - name: Configure sysctl
   ansible.builtin.include_tasks:
     file: sysctl.yml
+  when: sysctl_enabled
 
 - name: Disable kernel network modules
   ansible.builtin.include_tasks:
